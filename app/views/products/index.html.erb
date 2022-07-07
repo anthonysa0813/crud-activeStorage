@@ -1,0 +1,13 @@
+<h1>Products</h1>
+
+<% @products.each do |product| %>
+  <% if product.photo.attached? %>
+    <%= image_tag product.photo , width: 200%>
+  <% end %>
+  <h3>Title: <%= product.title %></h3>
+  <span>Price: <%= product.price %></span>
+  
+  <div>
+  <%= link_to "ver más", product_path(product) %>
+  </div>
+<% end %>

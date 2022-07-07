@@ -1,0 +1,12 @@
+<% if @product.photo.attached? %>
+  <%= image_tag @product.photo, width: 200 %>
+<% end %>
+
+<h1><%= @product.title %></h1>
+<strong>Description: </strong><p><%= @product.description %></p>
+<strong>Price: </strong><p>$<%= @product.price %></p>
+<%= link_to "editar", edit_product_path(@product) %>
+<%= link_to "eliminar", product_path(@product), data: { 
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+} %>
