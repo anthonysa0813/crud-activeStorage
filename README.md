@@ -22,3 +22,11 @@ class Product < ApplicationRecord
   validates :title, :description, :price , presence: true
 end
 ```
+
+4. Mostrando una imagen en el template
+
+```ruby
+  <% if product.photo.attached? %>
+    <%= image_tag product.photo , width: 200%>
+  <% end %>
+```
